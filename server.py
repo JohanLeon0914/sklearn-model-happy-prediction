@@ -5,7 +5,10 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins=[
+    "http://localhost:3000",
+    "https://tu-frontend.vercel.app"
+])
 model = joblib.load("./out/best_model.pkl")
 
 @app.route("/predict", methods=["POST"])
