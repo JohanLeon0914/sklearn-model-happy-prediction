@@ -2,8 +2,10 @@ import joblib
 import numpy as np
 import pandas as pd
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 model = joblib.load("./out/best_model.pkl")
 
 @app.route("/predict", methods=["POST"])
