@@ -7,7 +7,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app, origins=[
     "http://localhost:3000",
-    "https://tu-frontend.vercel.app"
+    "https://happiness-predictor.vercel.app"
 ])
 model = joblib.load("./out/best_model.pkl")
 
